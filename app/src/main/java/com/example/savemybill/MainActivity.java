@@ -1,5 +1,6 @@
 package com.example.savemybill;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -9,6 +10,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 
 import android.view.View;
 import android.view.Menu;
@@ -19,6 +21,7 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     EditText name, phone, email;
+    CardView card1, card2, card3, card4;
     Button insert;
     FirebaseDatabase database;
     DatabaseReference ref;
@@ -29,6 +32,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        card1 = (CardView) findViewById(R.id.card1);
+        card2 = (CardView) findViewById(R.id.card2);
+        card3 = (CardView) findViewById(R.id.card3);
+        card4 = (CardView) findViewById(R.id.card4);
+
+        //use it for net-zero status activity
+        card1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                card1.getContext().startActivity(new Intent(card1.getContext(),card2activity.class));
+            }
+        });
+
+        //use it for eco-trending devices status activity
+        card2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                card2.getContext().startActivity(new Intent(card2.getContext(),card2activity.class));
+            }
+        });
+
+        //use it for data analytics activity
+
+        card3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                card3.getContext().startActivity(new Intent(card3.getContext(),card2activity.class));
+            }
+        });
+
+        card4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                card4.getContext().startActivity(new Intent(card4.getContext(),card2activity.class));
+            }
+        });
 
 
     }
