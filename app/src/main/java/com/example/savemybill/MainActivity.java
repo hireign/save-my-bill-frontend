@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                card1.getContext().startActivity(new Intent(card1.getContext(),card2activity.class));
+                card1.getContext().startActivity(new Intent(card1.getContext(),card1activity.class));
             }
         });
 
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         card3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                card3.getContext().startActivity(new Intent(card3.getContext(),card2activity.class));
+                card3.getContext().startActivity(new Intent(card3.getContext(),card3activity.class));
             }
         });
 

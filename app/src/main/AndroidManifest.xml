@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".card2activity"></activity>
+        <activity android:name=".card1activity" />
+        <activity android:name=".card3activity" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
