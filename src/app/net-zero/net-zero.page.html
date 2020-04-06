@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="../home">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>NET ZERO</ion-title>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div>
+        <ion-segment>
+            <ion-segment-button value="signup" (click)="onCalculate()">
+                <ion-label>Calculate</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="login" (click)="onSearch()">
+                <ion-label>Search</ion-label>
+            </ion-segment-button>
+
+        </ion-segment>
+        <div *ngIf="search">
+            <ion-item>
+                <ion-input [(ngModel)]="buildGet" placeholder="Enter Building Name/Number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-button class="details-button" (click)="clickGet()">Get</ion-button>
+            </ion-item>
+            <ion-item *ngFor="let item of reqStatus">
+                <label>{{item.name}}</label>
+                <label *ngIf="item.status" slot="end">Positive</label>
+                <label *ngIf="!item.status" slot="end">Negative</label>
+            </ion-item>
+        </div>
+        <div *ngIf="calc">
+            <br>
+            <ion-input [(ngModel)]="buildId" placeholder="Enter Building Name/Number"></ion-input>
+            <ion-input [(ngModel)]="buildUsed" placeholder="Enter Electricity Used(units)"></ion-input>
+            <br>
+
+            <label>Add eco products if under use </label>
+            <br>
+            <ion-item *ngFor="let item of deviceids">
+                <label>Device {{deviceids[item]+1}} </label>
+                <ion-input [(ngModel)]="deviceValues[item]" placeholder="Enter Value (units)" slot="end"></ion-input>
+            </ion-item>
+            <ion-button class="details-button" (click)="addDevice()">Add Device
+            </ion-button>
+            <ion-button class="details-button" (click)="clickCalculate()">Sumbit
+            </ion-button>
+        </div>
+    </div>
+</ion-content>

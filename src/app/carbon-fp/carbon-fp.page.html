@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="../home">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>SUPPORT</ion-title>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <h2>Contact Us:</h2><br>
+    <ion-item class="main-content">
+        <label>Email: savmybil@support.com</label><br><br>
+    </ion-item>
+    <ion-item class="main-content">
+        <label>Phone: +1(901)-806-7090</label>
+    </ion-item>
+
+
+    <br><br>
+    <h2>Form:</h2><br>
+
+    <ion-item class="main-content">
+        <ion-input [(ngModel)]="userName" placeholder="Name"></ion-input>
+    </ion-item>
+
+    <ion-item class="main-content">
+        <ion-input [(ngModel)]="userMail" placeholder="Mail"></ion-input>
+    </ion-item>
+
+    <ion-item class="main-content">
+        <label>Body:</label>
+    </ion-item>
+    <ion-item class="main-content">
+        <input type="text" [(ngModel)]="mailBody">
+    </ion-item>
+
+    <ion-item class="main-content">
+        <ion-button (click)="onSubmit()">Submit</ion-button>
+    </ion-item>
+
+
+</ion-content> 

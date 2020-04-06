@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-item>
+            <ion-button routerLink="../home">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </ion-button>
+            <ion-title>ECO DEVICES</ion-title>
+        </ion-item>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <br>
+    <label>Trending:</label>
+    <br>
+    <br>
+    <ion-item *ngFor="let item of deviceData">
+        <label>{{item.deviceName}}</label><br>
+        <ion-item slot="end">
+            <label>Cost: {{item.deviceCost}}$</label>
+            <ion-button (click)="onBuy(item.deviceLink)" slot="end">Buy</ion-button>
+        </ion-item>
+        <br>
+    </ion-item>
+
+</ion-content>

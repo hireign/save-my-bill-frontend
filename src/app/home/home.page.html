@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Home
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="card-background-page">
+    <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">
+                SavMyBil
+            </ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <!--
+    <ion-list>
+        <app-message *ngFor="let message of getMessages()" [message]="message"></app-message>
+    </ion-list>
+-->
+    <ion-item>
+        <img class="logo-image" src="../../assets/icon/logo.png" />
+    </ion-item>
+
+    <div>
+        <br>
+        <ion-item>
+            <ion-card (click)="onClick(netZero)">
+                <img src="../../assets/icon/netZero.png" />
+                <div class="card-title">Net Zero</div>
+                <div class="card-subtitle">Status</div>
+            </ion-card>
+            <ion-card (click)="onClick(2)">
+                <img src="../../assets/icon/ecoDevice.png" />
+                <div class="card-title">Eco Devices</div>
+                <div class="card-subtitle">Trending</div>
+            </ion-card>
+        </ion-item>
+        <ion-item>
+            <ion-card (click)="onClick(3)">
+                <img src="../../assets/icon/SmartHome.png" />
+                <div class="card-title">Smart Home</div>
+                <div class="card-subtitle">Devices</div>
+            </ion-card>
+            <ion-card (click)="onClick(4)">
+                <img src="../../assets/icon/support.png" />
+                <div class="card-title">Support</div>
+                <div class="card-subtitle">24/7</div>
+            </ion-card>
+        </ion-item>
+    </div>
+    <label>{{myname}}</label>
+    <ion-list>
+        <label *ngFor="let message of sample">{{message}}</label>
+    </ion-list>
+</ion-content>

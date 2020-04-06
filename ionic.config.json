@@ -1,0 +1,8 @@
+{
+  "name": "SavMyBil",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
